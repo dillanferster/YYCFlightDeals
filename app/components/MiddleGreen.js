@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AstarL from "../../assets/AstarL.svg";
-import AstarR from "../../assets/AstarR.svg";
+import AstarL from "../assets/AstarL.svg";
+import AstarR from "../assets/AstarR.svg";
 
 export function MiddleGreen() {
   return (

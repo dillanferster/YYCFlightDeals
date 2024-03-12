@@ -1,9 +1,9 @@
-import { CheapFlights } from "./CheapFlights/page";
-import { MainContainer } from "./MainContainer/page";
-import { WhyNotGo } from "./WhyNotGo/page";
-import { MiddleGreen } from "./components/MiddleGreen/page";
-import { Nav } from "./components/Nav/page";
-import { TopGreen } from "./components/TopGreen/page";
+import { CheapFlights } from "./components/CheapFlights";
+import { MainContainer } from "./components/MainContainer";
+import { WhyNotGo } from "./components/WhyNotGo";
+import { MiddleGreen } from "./components/MiddleGreen";
+import { Nav } from "./components/Nav";
+import { TopGreen } from "./components/TopGreen";
 
 export default function Home() {
   return (

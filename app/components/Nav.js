@@ -1,5 +1,5 @@
 import React from "react";
-import { NavButton } from "../NavButton/page";
+import { NavButton } from "./NavButton";
 
 export function Nav() {
   return (
