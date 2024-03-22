@@ -1,0 +1,15 @@
+#MiniCardHolder:hover #MiniCard {
+  width: 14rem;
+}
+
+#MiniCardInfo {
+  visibility: hidden;
+}
+
+#MiniCard:hover #MiniCardFlight {
+  visibility: hidden;
+}
+
+#MiniCard:hover #MiniCardInfo {
+  visibility: visible;
+}

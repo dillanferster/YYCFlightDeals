@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  --color-green:#A9FC8C;
-  --color-grey: #D9D9D9;
+  --color-green: #a9fc8c;
+  --color-grey: #d9d9d9;
 }
 
 @media (prefers-color-scheme: dark) {
