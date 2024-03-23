@@ -5,10 +5,11 @@ import { MiddleGreen } from "./components/MiddleGreen";
 import { Nav } from "./components/Nav";
 import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
+import { Grid } from "./components/Grid";
 
 export default function Home() {
   return (
-    <main className="bg-[#FDFEFE] flex-col align-middle items-center justify-center">
+    <main className="bg-[#FDFEFE] flex-col align-middle items-center justify-center mx-auto">
       <Nav />
 
       <div className="flex justify-center gap-8 px-2">
@@ -20,11 +21,8 @@ export default function Home() {
       <MainContainer />
       <WhyNotGo />
       <SmallCardHolder />
-      <MainContainer />
-      <MainContainer />
-      <MainContainer />
-      <MainContainer />
-      <MainContainer />
+
+      <Grid />
     </main>
   );
 }
