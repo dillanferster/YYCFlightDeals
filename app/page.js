@@ -20,6 +20,11 @@ export default function Home() {
       <MainContainer />
       <WhyNotGo />
       <SmallCardHolder />
+      <MainContainer />
+      <MainContainer />
+      <MainContainer />
+      <MainContainer />
+      <MainContainer />
     </main>
   );
 }

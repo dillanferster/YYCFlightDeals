@@ -1,3 +1,5 @@
+import "./MainContainer.css";
+
 export function MainContainerButton() {
   return (
     <div
@@ -7,7 +9,10 @@ export function MainContainerButton() {
       <div className="flex justify-center items-center h-[2rem] border-white border-2 rounded-full w-[16rem] text-white">
         YYC &rarr; Place | From $000
       </div>
-      <button className="h-[2rem] border-white border-2 rounded-full w-[4rem] text-[var(--color-green)] text-xl hover:border-[var(--color-green)] ">
+      <button
+        id="MainContainerBtn"
+        className="h-[2rem] border-white border-2 rounded-full w-[4rem] text-[var(--color-green)] text-xl hover:border-[var(--color-green)] "
+      >
         &rarr;
       </button>
     </div>
