@@ -1,5 +1,6 @@
 import React from "react";
 import { NavButton } from "./NavButton";
+import Link from "next/link";
 
 export function Nav() {
   return (
@@ -7,7 +8,9 @@ export function Nav() {
       <div className="flex gap-5 justify-between items-center ">
         <div className="text-xl pl-4 text-zinc-950">YYC FLIGHT DEALS</div>
         <div className="flex gap-2.5 pr-4 justify-between items-center">
-          <NavButton />
+          <Link href="/">
+            <NavButton />
+          </Link>
         </div>
       </div>
       {/* <hr className="mt-2 h-0.5 border-black  max-w-[1024px]" /> */}

@@ -3,34 +3,34 @@ import { GridCube } from "./GridCube";
 
 export function Grid() {
   return (
-    <div className="flex flex-wrap  w-[64rem] mx-auto mt-32 mb-16 -translate-x-2">
+    <div className="flex flex-wrap  max-w-[64.5rem] mx-auto mt-32 mb-16 translate-x-1.4">
       <div className="flex flex-col">
-        <div className="">
+        <div className="translate-x-1 translate-y-1">
           <GridCube />
         </div>
-        <div className="">
+        <div className="translate-x-1 translate-y-0.5">
           <GridCube />
         </div>
-        <div className="">
+        <div className="translate-x-1 ">
           <GridCube />
         </div>
       </div>
       <div className="flex flex-col  ">
-        <div className="">
+        <div className="translate-x-0.5 translate-y-1">
           <GridCube />
         </div>
-        <div className="">
+        <div className="translate-x-0.5 translate-y-0.5">
           <GridCube />
         </div>
-        <div className="">
+        <div className="translate-x-0.5">
           <GridCube />
         </div>
       </div>
       <div className="flex flex-col ">
-        <div className="">
+        <div className=" translate-y-1">
           <GridCube />
         </div>
-        <div className="">
+        <div className="translate-y-0.5">
           <GridCube />
         </div>
         <div className="">

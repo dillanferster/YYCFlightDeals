@@ -6,12 +6,11 @@ import { Nav } from "./components/Nav";
 import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
 import { Grid } from "./components/Grid";
+import DetailCard from "./components/DetailCard";
 
 export default function Home() {
   return (
-    <main className="bg-[#FDFEFE] flex-col align-middle items-center justify-center mx-auto">
-      <Nav />
-
+    <main className=" flex-col  items-center justify-center ">
       <div className="flex justify-center gap-8 px-2">
         <TopGreen firstWord="WHERE" secondWord="IS" />
         <TopGreen firstWord="THE" secondWord="NEXT" />
