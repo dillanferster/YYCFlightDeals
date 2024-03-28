@@ -9,14 +9,7 @@
 :root {
   --color-green: #a9fc8c;
   --color-grey: #d9d9d9;
-  background-image: linear-gradient(
-    to right bottom,
-    #f2f5ee,
-    #ebf3ee,
-    #e6f0ef,
-    #e3edf0,
-    #e3e9ef
-  );
+  --color-bg: #fdfefe;
 }
 
 @media (prefers-color-scheme: dark) {

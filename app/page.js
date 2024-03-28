@@ -5,7 +5,7 @@ import { MiddleGreen } from "./components/MiddleGreen";
 import { Nav } from "./components/Nav";
 import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
-import { Grid } from "./components/Grid";
+import { Grid } from "./components/GridCube/Grid";
 import DetailCard from "./components/DetailCard";
 
 export default function Home() {
