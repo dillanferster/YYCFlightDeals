@@ -1,5 +1,6 @@
 import React from "react";
 import { GridCube } from "./GridCube";
+import { MiddleGridCube } from "../MiddleGridCube";
 
 export function Grid() {
   return (
@@ -20,7 +21,7 @@ export function Grid() {
           <GridCube />
         </div>
         <div className="translate-x-0.5 translate-y-0.5">
-          <GridCube />
+          <MiddleGridCube />
         </div>
         <div className="translate-x-0.5">
           <GridCube />
