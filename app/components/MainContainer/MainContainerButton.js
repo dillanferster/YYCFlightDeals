@@ -4,7 +4,7 @@ export function MainContainerButton() {
   return (
     <div
       id="MainCB"
-      className=" flex w-[63rem] p-2 justify-end items-center pr-12 pb-3 gap-2 "
+      className=" flex max-w-[63rem] p-2 justify-end items-center pr-12 pb-3 gap-2 "
     >
       <div className="flex justify-center items-center h-[2rem] border-white border-2 rounded-full w-[16rem] text-white">
         YYC &rarr; Place | From $000
