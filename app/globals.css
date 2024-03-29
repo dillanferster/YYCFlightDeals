@@ -9,7 +9,7 @@
 :root {
   --color-green: #a9fc8c;
   --color-grey: #d9d9d9;
-  --color-bg: #fdfefe;
+  --color-bg: #f9f7f5;
 }
 
 @media (prefers-color-scheme: dark) {
