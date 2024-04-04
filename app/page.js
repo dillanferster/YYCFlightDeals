@@ -1,3 +1,4 @@
+"use client";
 import { CheapFlights } from "./components/CheapFlights";
 import { MainContainer } from "./components/MainContainer/MainContainer";
 import { WhyNotGo } from "./components/WhyNotGo";
@@ -7,8 +8,22 @@ import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
 import { Grid } from "./components/GridCube/Grid";
 import DetailCard from "./components/DetailCard";
+import { fetchData } from "./components/fetchData";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [flightData, setFlightData] = useState();
+
+  const getflights = () => {
+    const flights = fetchData();
+
+    setFlightData(flights);
+  };
+
+  useEffect(() => {
+    getflights();
+  }, []);
+
   return (
     <main className=" flex-col  items-center justify-center ">
       <div className="flex justify-center gap-8 px-2">
