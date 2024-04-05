@@ -1,13 +1,25 @@
+import { useState, useEffect } from "react";
 import "./MainContainer.css";
 
-export function MainContainerButton() {
+export function MainContainerButton({ flightData }) {
+  const [flight, setFlight] = useState(null);
+
+  useEffect(() => {
+    if (flightData && flightData.length > 0) {
+      console.log("data in button");
+      setFlight(flightData[0]);
+    } else {
+      console.log("Flight data is not available yet.");
+    }
+  }, [flightData]);
+
   return (
     <div
       id="MainCB"
       className=" flex w-[63rem] p-2 justify-end items-center pr-12 pb-3 gap-2 "
     >
       <div className="flex justify-center items-center h-[2rem] border-white border-2 rounded-full w-[16rem] text-white">
-        YYC &rarr; Place | From $000
+        YYC &rarr; Place | From ${flight ? flight.price : ""}
       </div>
       <button
         id="MainContainerBtn"

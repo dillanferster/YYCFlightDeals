@@ -12,13 +12,21 @@ import { fetchData } from "./components/fetchData";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [flightData, setFlightData] = useState();
+  const [flightData, setFlightData] = useState([]);
 
-  const getflights = () => {
-    const flights = fetchData();
+  async function getflights() {
+    const flights = await fetchData();
 
-    setFlightData(flights);
-  };
+    // Assuming flights.data is an object like the one you've described
+    const flightsArray = Object.values(flights.data);
+
+    setFlightData(flightsArray);
+
+    // // // Now you can access the first flight object
+    const foundFlight = flightsArray[0];
+
+    console.log(foundFlight.price);
+  }
 
   useEffect(() => {
     getflights();
@@ -32,7 +40,7 @@ export default function Home() {
       </div>
       <MiddleGreen />
       <CheapFlights />
-      <MainContainer />
+      <MainContainer flightData={flightData} />
       <WhyNotGo />
       <SmallCardHolder />
 

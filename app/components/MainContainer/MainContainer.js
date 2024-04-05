@@ -2,7 +2,13 @@ import { MainContainerButton } from "./MainContainerButton";
 import "./MainContainer.css";
 import Link from "next/link";
 
-export function MainContainer() {
+export function MainContainer({ flightData }) {
+  if (flightData && flightData.length > 0) {
+    // console.log("data loaded");
+  } else {
+    console.log("Flight data is not available yet.");
+  }
+
   return (
     <div
       id="MainC"
@@ -10,7 +16,7 @@ export function MainContainer() {
     >
       <Link href="pages/details">
         <div className="flex bg-[url('/Beach.jpeg')] bg-cover  bg-left justify-end items-end border-2 border-[#696565] border-solid  w-[62rem] rounded-2xl h-48 hover:translate-y-[2px] drop-shadow-[_1px_8px_rgba(217,217,217,1)] ease-in-out transition-all hover:drop-shadow-[_1px_6px_rgba(217,217,217,1)] overflow-hidden cursor-pointer [&>*]:hover:backdrop-blur-sm ">
-          <MainContainerButton></MainContainerButton>
+          <MainContainerButton flightData={flightData}></MainContainerButton>
         </div>
       </Link>
     </div>
