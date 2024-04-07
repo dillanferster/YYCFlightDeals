@@ -1,12 +1,22 @@
 "use client";
 import DetailCard from "@/app/components/DetailCard";
-import { useRouter } from "next/navigation";
+
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const flight = router.query ? router.query.flight : null;
+  const [foundFlight, setFoundFlight] = useState();
 
-  console.log(flight);
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("flight"));
+
+    setFoundFlight(data);
+  }, []);
+
+  if (foundFlight) {
+    localStorage.removeItem("flight");
+    console.log(foundFlight);
+  }
+
   return (
     <main className="bg-[var(--color-bg)] bg-fixed flex flex-col  items-center justify-center ">
       <div>
