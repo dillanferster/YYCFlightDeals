@@ -13,10 +13,13 @@ export default function DetailCard({ flightDetail }) {
   const returnAtTime = DateTime.fromISO(returnAt).toFormat("HH:mm:ss");
   const returnAtDate = DateTime.fromISO(returnAt).toFormat("EEEE, MMMM dd");
 
-  console.log(departureTime);
-  console.log(departureDate);
-  console.log(returnAtTime);
-  console.log(returnAtDate);
+  //trip duration
+  const end = DateTime.fromISO(returnAt);
+  const start = DateTime.fromISO(departure);
+  const diffInDays = end.diff(start, "days");
+  const days = Math.floor(diffInDays.days);
+
+  
 
   return (
     <div className="flex flex-wrap justify-between items-center p-8 gap-4 bg-transparent">
@@ -25,14 +28,16 @@ export default function DetailCard({ flightDetail }) {
           <div className="p-4 h-[25rem] flex flex-col justify-between gap-8">
             <div className="mb-4 flex flex-col gap-4">
               <div className="text-sm font-semibold text-gray-700 mb-1 ">
-                {departureDate} - OutBound
+                {`${departureDate} - OutBound`}
               </div>
               <div className="flex items-center justify-between">
                 <div className="bg-gray-300 text-slate-900 rounded-full px-3 py-1 text-lg font-normal">
                   YYC
                 </div>
                 <div className="text-sm font-semibold text-gray-700">
-                  Direct
+                  {flightDetails.transfers === 0
+                    ? "Direct"
+                    : `stops: ${flightDetails.transfers}`}
                 </div>
                 <div className="bg-gray-300 text-slate-900  rounded-full px-3 py-1 text-lg font-normal">
                   {flightDetails.destination}
@@ -40,22 +45,24 @@ export default function DetailCard({ flightDetail }) {
               </div>
               <div className="flex justify-between text-sm text-gray-600 mt-2">
                 <div>{departureTime}</div>
-                <div>Flight Number: {flightDetails.flight_number}</div>
+                <div>{`Flight Number: ${flightDetails.flight_number}`}</div>
               </div>
             </div>
             <div className="flex justify-center items-center border rounded-lg py-2 text-sm font-semibold text-gray-700">
-              days
+              {`Trip Duration: ${days} days`}
             </div>
             <div className="mt-4 flex flex-col gap-4">
               <div className="text-sm font-semibold text-gray-700 mb-1">
-                {returnAtDate} - InBound
+                {`${returnAtDate} - InBound`}
               </div>
               <div className="flex items-center justify-between">
                 <div className="bg-gray-300 text-slate-900  rounded-full px-3 py-1 text-lg font-normal">
                   {flightDetails.destination}
                 </div>
                 <div className="text-sm font-semibold text-gray-700">
-                  Direct
+                  {flightDetails.transfers === 0
+                    ? "Direct"
+                    : `stops: ${flightDetails.transfers}`}
                 </div>
                 <div className="bg-gray-300 text-slate-900  rounded-full px-3 py-1 text-lg font-normal">
                   YYC
@@ -63,7 +70,7 @@ export default function DetailCard({ flightDetail }) {
               </div>
               <div className="flex justify-between text-sm text-gray-600 mt-2">
                 <div>{returnAtTime}</div>
-                <div>Airline : {flightDetails.airline}</div>
+                <div>{`Airline : ${flightDetails.airline}`}</div>
               </div>
             </div>
           </div>
@@ -73,7 +80,7 @@ export default function DetailCard({ flightDetail }) {
       <div className="h-[30rem] w-[12rem]  bg-white  rounded-xl shadow-lg flex flex-col justify-end">
         <div className="mb-[9.5rem]">
           <span className=" flex  justify-center font-medium text-lg text-slate-700">
-            CA ${flightDetails.price}
+            {`CA $${flightDetails.price}`}
           </span>
         </div>
 
