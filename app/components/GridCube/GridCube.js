@@ -3,7 +3,9 @@ import { MainContainerButton } from "../MainContainer/MainContainerButton";
 import "./GridCube.css";
 import Link from "next/link";
 
-export function GridCube() {
+export function GridCube({flight}) {
+
+  
   return (
     <Link href="pages/details">
       <div

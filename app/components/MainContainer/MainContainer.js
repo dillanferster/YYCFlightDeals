@@ -3,7 +3,6 @@ import { MainContainerButton } from "./MainContainerButton";
 import "./MainContainer.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { data } from "autoprefixer";
 
 export function MainContainer({ flightData }) {
   const [flight, setFlight] = useState(null);

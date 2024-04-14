@@ -42,9 +42,9 @@ export default function Home() {
       <CheapFlights />
       <MainContainer flightData={flightData} />
       <WhyNotGo />
-      <SmallCardHolder />
+      <SmallCardHolder flightData={flightData} />
 
-      <Grid />
+      <Grid flightData={flightData} />
     </main>
   );
 }
