@@ -24,7 +24,7 @@ export default function Home({ params }) {
     getFlights();
   }, []);
 
-  console.log(flightDataDetail);
+  
 
   return (
     <main className="bg-[var(--color-bg)] bg-fixed flex flex-col  items-center justify-center ">

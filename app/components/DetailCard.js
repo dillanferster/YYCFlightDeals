@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import Link from "next/link";
 
 export default function DetailCard({ flightDetail }) {
   const flightDetails = flightDetail;
@@ -8,18 +9,20 @@ export default function DetailCard({ flightDetail }) {
   const departureTime = DateTime.fromISO(departure).toFormat("HH:mm:ss");
   const departureDate = DateTime.fromISO(departure).toFormat("EEEE, MMMM dd");
 
+  const departureDateForUrl = DateTime.fromISO(departure).toFormat("ddMM");
+
   // return formatting
   const returnAt = flightDetails.return_at;
   const returnAtTime = DateTime.fromISO(returnAt).toFormat("HH:mm:ss");
   const returnAtDate = DateTime.fromISO(returnAt).toFormat("EEEE, MMMM dd");
+
+  const returnAtDateForUrl = DateTime.fromISO(returnAt).toFormat("ddMM");
 
   //trip duration
   const end = DateTime.fromISO(returnAt);
   const start = DateTime.fromISO(departure);
   const diffInDays = end.diff(start, "days");
   const days = Math.floor(diffInDays.days);
-
-  
 
   return (
     <div className="flex flex-wrap justify-between items-center p-8 gap-4 bg-transparent">
@@ -85,14 +88,19 @@ export default function DetailCard({ flightDetail }) {
         </div>
 
         <div className="flex justify-center mb-5 ">
-          <div className="flex [&>*]:hover:bg-gray-500 cursor-pointer ">
-            <button className="  p-1  bg-gray-800 rounded-lg h-8 w-[6rem]   text-white [&>*]:hover:bg-gray-500">
-              Select
-            </button>
-            <div className="p-1 bg-gray-800 rounded-lg h-8 w-[2rem] flex justify-center items-center  text-white">
-              +
+          <Link
+            target="blank"
+            href={`https://www.aviasales.com/search/YYC${departureDateForUrl}${flightDetails.destination}${returnAtDateForUrl}1?request_source=search_form`}
+          >
+            <div className="flex [&>*]:hover:bg-gray-500 cursor-pointer ">
+              <button className="  p-1  bg-gray-800 rounded-lg h-8 w-[6rem]   text-white [&>*]:hover:bg-gray-500">
+                Select
+              </button>
+              <div className="p-1 bg-gray-800 rounded-lg h-8 w-[2rem] flex justify-center items-center  text-white">
+                +
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="flex justify-between items-center p-4 bg-[var(--color-green)] rounded-b-lg"></div>
       </div>
