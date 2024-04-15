@@ -7,8 +7,6 @@ export function MiniCard({ flightItem, index }) {
   const flightMini = flightItem;
   const position = index + 1;
 
-  console.log(position);
-
   return (
     <Link href={`/details/${position}`}>
       <div

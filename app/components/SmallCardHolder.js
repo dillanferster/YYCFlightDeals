@@ -8,7 +8,6 @@ export function SmallCardHolder({ flightData }) {
 
   useEffect(() => {
     if (flightData && flightData.length > 0) {
-      console.log("data in small card holder");
       setFlight(flightData);
     } else {
       console.log("Flight data is not available yet.");
@@ -18,8 +17,6 @@ export function SmallCardHolder({ flightData }) {
   const filteredFlight = flight
     ? flight.filter((_, index) => index >= 1 && index <= 5)
     : [];
-
-  
 
   return (
     <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto">

@@ -3,11 +3,11 @@ import { MainContainerButton } from "../MainContainer/MainContainerButton";
 import "./GridCube.css";
 import Link from "next/link";
 
-export function GridCube({flight}) {
+export function GridCube({ flight, index }) {
+  const gridFlight = flight ? flight : "";
 
-  
   return (
-    <Link href="pages/details">
+    <Link href={`/details/${index}`}>
       <div
         id="gridCube"
         className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-[url('/Desert.png')] bg-cover  bg-left flex flex-col justify-end [&>*]:hover:backdrop-blur-sm ease-in-out  transition-all overflow-hidden cursor-pointer "
@@ -15,10 +15,12 @@ export function GridCube({flight}) {
         <div className=" h-20 flex justify-between ease-in-out  transition-all ">
           <div className="flex flex-col justify-evenly pl-4">
             <div className="flex">
-              <div className="font-bold text-2xl text-white">Mexico</div>
+              <div className="font-bold text-2xl text-white">
+                {gridFlight.destination}
+              </div>
             </div>
 
-            <div className="font-medium text-white">Tickets from $450</div>
+            <div className="font-medium text-white">{`Tickets from ${gridFlight.price}`}</div>
           </div>
           <div
             id="gridBtn"

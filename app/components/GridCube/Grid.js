@@ -4,50 +4,70 @@ import { MiddleGridCube } from "../MiddleGridCube";
 import { useState, useEffect } from "react";
 
 export function Grid({ flightData }) {
-  const [flight, setFlight] = useState(null);
+  const [flightGrid, setFlightGrid] = useState(null);
+
+  let gridOne;
+  let gridTwo;
+  let gridThree;
+  let gridFour;
+  let gridFive;
+  let gridSix;
+  let gridSeven;
+  let gridEight;
 
   useEffect(() => {
     if (flightData && flightData.length > 0) {
       console.log("data in small card holder");
-      setFlight(flightData);
+      setFlightGrid(flightData);
     } else {
       console.log("Flight data is not available yet.");
     }
   }, [flightData]);
 
+  if (flightGrid) {
+    gridOne = flightGrid[6];
+    gridTwo = flightGrid[7];
+    gridThree = flightGrid[8];
+    gridFour = flightGrid[9];
+    gridFive = flightGrid[10];
+    gridSix = flightGrid[11];
+    gridSeven = flightGrid[12];
+    gridEight = flightGrid[13];
+  }
+
   return (
     <div className="flex flex-wrap  max-w-[64.5rem] mx-auto mt-32 mb-16 translate-x-1.4">
       <div className="flex flex-col">
         <div className="translate-x-1 translate-y-1">
-          <GridCube flight={flight} />
+          <GridCube flight={gridOne} index={6} />
         </div>
         <div className="translate-x-1 translate-y-0.5">
-          <GridCube flight={flight} />
+          <GridCube flight={gridTwo} index={7} />
         </div>
         <div className="translate-x-1 ">
-          <GridCube flight={flight} />
+          <GridCube flight={gridThree} index={8} />
         </div>
       </div>
       <div className="flex flex-col  ">
         <div className="translate-x-0.5 translate-y-1">
-          <GridCube flight={flight} />
+          <GridCube flight={gridFour} index={9} />
         </div>
         <div className="translate-x-0.5 translate-y-0.5">
           <MiddleGridCube />
         </div>
         <div className="translate-x-0.5">
-          <GridCube flight={flight} />
+          <GridCube flight={gridFive} index={10} />
         </div>
       </div>
       <div className="flex flex-col ">
         <div className=" translate-y-1">
-          <GridCube flight={flight} />
+          <GridCube flight={gridSix} index={11} />
         </div>
         <div className="translate-y-0.5">
-          <GridCube flight={flight} />
+          <GridCube flight={gridSeven} index={12} />
         </div>
         <div className="">
-          <GridCube flight={flight} />
+          <GridCube flight={gridEight} index={13} />
         </div>
       </div>
     </div>
