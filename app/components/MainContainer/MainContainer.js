@@ -19,7 +19,7 @@ export function MainContainer({ flightData }) {
   return (
     <div
       id="MainC"
-      className="flex justify-center px-4 mt-4 max-w-[62rem] max-lg:w-[46rem]  mx-auto max-md:w-[38rem] max-md:mt-2 max-sm:w-[23rem] mb-5"
+      className="flex justify-center px-4 mt-4 max-w-[62rem] max-lg:w-[46rem]  mx-auto max-md:w-[38rem] max-md:mt-2 max-sm:w-[23rem] mb-5 bg-transparent"
     >
       <Link href={`/details/0`}>
         <div className="flex bg-[url('/Beach.jpeg')] bg-cover  bg-left justify-end items-end border-2 border-[#696565] border-solid  max-w-[62rem] rounded-md h-48 hover:translate-y-[1px] drop-shadow-[_1px_6px_#757272] ease-in-out transition-all hover:drop-shadow-[_1px_5px_#9A9797] cursor-pointer [&>*]:hover:backdrop-blur-sm max-lg:w-[44rem] max-md:w-[36rem] max-sm:w-[23rem] ">
