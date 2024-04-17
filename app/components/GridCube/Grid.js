@@ -36,8 +36,8 @@ export function Grid({ flightData }) {
   }
 
   return (
-    <div className="flex flex-wrap  max-w-[64.5rem] mx-auto mt-32 mb-16 translate-x-1.4">
-      <div className="flex flex-col">
+    <div className="flex flex-wrap justify-center items-center max-w-[100%] w-[100%] mx-auto mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
+      <div className="flex flex-col ">
         <div className="translate-x-1 translate-y-1">
           <GridCube flight={gridOne} index={6} />
         </div>
@@ -48,11 +48,11 @@ export function Grid({ flightData }) {
           <GridCube flight={gridThree} index={8} />
         </div>
       </div>
-      <div className="flex flex-col  ">
+      <div className="flex flex-col max-xl:hidden ">
         <div className="translate-x-0.5 translate-y-1">
           <GridCube flight={gridFour} index={9} />
         </div>
-        <div className="translate-x-0.5 translate-y-0.5">
+        <div className="translate-x-0.5 translate-y-0.5 ">
           <MiddleGridCube />
         </div>
         <div className="translate-x-0.5">

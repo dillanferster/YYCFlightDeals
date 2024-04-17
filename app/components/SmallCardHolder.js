@@ -22,7 +22,11 @@ export function SmallCardHolder({ flightData }) {
     <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto">
       {flight ? (
         filteredFlight.map((flightItem, index) => {
-          return <MiniCard key={index} flightItem={flightItem} index={index} />;
+          return (
+            <div className={index === 0 || index === 4 ? "max-sm:hidden" : ""}>
+              <MiniCard key={index} flightItem={flightItem} index={index} />
+            </div>
+          );
         })
       ) : (
         <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto">

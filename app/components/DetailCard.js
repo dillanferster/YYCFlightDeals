@@ -80,8 +80,8 @@ export default function DetailCard({ flightDetail }) {
         </div>
         <div className="flex justify-between items-center p-4 bg-[var(--color-green)] rounded-b-lg"></div>
       </div>
-      <div className="h-[30rem] w-[12rem]  bg-white  rounded-xl shadow-lg flex flex-col justify-end">
-        <div className="mb-[9.5rem]">
+      <div className="h-[30rem] w-[12rem]  bg-white  rounded-xl shadow-lg flex flex-col justify-end max-md:h-[15rem] max-md:w-[30rem]">
+        <div className="mb-[9.5rem] max-md:mb-[4rem]">
           <span className=" flex  justify-center font-medium text-lg text-slate-700">
             {`CA $${flightDetails.price}`}
           </span>

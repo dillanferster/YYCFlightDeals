@@ -3,7 +3,7 @@ import Globe from "../assets/globe.svg";
 
 export function MiddleGridCube() {
   return (
-    <div className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm  bg-transparent flex flex-col justify-evenly items-center transition-all overflow-hidden  ">
+    <div className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm  flex flex-col justify-evenly items-center transition-all overflow-hidden bg-[--color-bg] ">
       <div className="text-sm">YOU CAN TAKE ONE MORE DAY OFF ITS FINE</div>
       <div>
         <Image src={Globe} alt="globe" />

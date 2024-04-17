@@ -1,7 +1,7 @@
 export function WhyNotGo() {
   return (
-    <div className="flex justify-center gap-6 text-[5.5rem] mt-4  max-md:text-4xl">
-      <span className="text-zinc-950">. . . SO</span>
+    <div className="flex justify-center gap-6 text-[5.5rem] mt-4  max-lg:text-6xl max-md:text-5xl  max-sm:text-3xl">
+      <span className="text-zinc-950 ">. . . SO</span>
       <span className="italic font-semibold text-[var(--color-green)]">
         WHY
       </span>
