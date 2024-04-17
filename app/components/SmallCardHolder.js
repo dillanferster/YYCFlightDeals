@@ -36,8 +36,6 @@ export function SmallCardHolder({ flightData }) {
           <MiniCardLoading />
           <MiniCardLoading />
           <MiniCardLoading />
-          <MiniCardLoading />
-          <MiniCardLoading />
         </div>
       )}
     </div>
