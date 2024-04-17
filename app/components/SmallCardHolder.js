@@ -23,8 +23,11 @@ export function SmallCardHolder({ flightData }) {
       {flight ? (
         filteredFlight.map((flightItem, index) => {
           return (
-            <div className={index === 0 || index === 4 ? "max-sm:hidden" : ""}>
-              <MiniCard key={index} flightItem={flightItem} index={index} />
+            <div
+              key={index}
+              className={index === 0 || index === 4 ? "max-sm:hidden" : ""}
+            >
+              <MiniCard flightItem={flightItem} index={index} />
             </div>
           );
         })
