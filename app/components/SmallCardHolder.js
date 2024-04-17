@@ -19,7 +19,7 @@ export function SmallCardHolder({ flightData }) {
     : [];
 
   return (
-    <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto">
+    <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto ">
       {flight ? (
         filteredFlight.map((flightItem, index) => {
           return (
