@@ -3,16 +3,21 @@ import { MainContainerButton } from "../MainContainer/MainContainerButton";
 import "./GridCube.css";
 import Link from "next/link";
 
-export function GridCube({ flight, index}) {
+export function GridCube({ flight, index, bg }) {
   const gridFlight = flight ? flight : "";
 
- 
+  const backGround = bg;
 
   return (
     <Link href={`/details/${index}`}>
       <div
+        style={{
+          backgroundImage: backGround,
+          backgroundSize: "cover", // or 'contain'
+          backgroundPosition: "center",
+        }}
         id="gridCube"
-        className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-[url('/Desert.png')] bg-cover  bg-left flex flex-col justify-end [&>*]:hover:backdrop-blur-sm ease-in-out  transition-all overflow-hidden cursor-pointer "
+        className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-cover bg-bottom flex flex-col justify-end [&>*]:hover:backdrop-blur-sm ease-in-out  transition-all overflow-hidden cursor-pointer "
       >
         <div className=" h-20 flex justify-between ease-in-out  transition-all ">
           <div className="flex flex-col justify-evenly pl-4">

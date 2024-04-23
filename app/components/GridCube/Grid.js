@@ -55,36 +55,36 @@ export function Grid({ flightData, cityCode }) {
   return (
     <div className="flex flex-wrap justify-center items-center -translate-x-0.5  mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
       <div className="flex flex-col ">
-        <div className="translate-x-1 translate-y-1">
-          <GridCube flight={gridOne} index={6} />
+        <div className="translate-x-1 translate-y-1 ">
+          <GridCube bg={`url("/Desert.png")`} flight={gridOne} index={6} />
         </div>
         <div className="translate-x-1 translate-y-0.5">
-          <GridCube flight={gridTwo} index={7} />
+          <GridCube bg={`url("/pic1.jpeg")`} flight={gridTwo} index={7} />
         </div>
         <div className="translate-x-1 ">
-          <GridCube flight={gridThree} index={8} />
+          <GridCube bg={`url("/pic2.jpeg")`} flight={gridThree} index={8} />
         </div>
       </div>
       <div className="flex flex-col max-xl:hidden ">
         <div className="translate-x-0.5 translate-y-1">
-          <GridCube flight={gridFour} index={9} />
+          <GridCube bg={`url("/pic3.jpeg")`} flight={gridFour} index={9} />
         </div>
         <div className="translate-x-0.5 translate-y-0.5 ">
           <MiddleGridCube />
         </div>
         <div className="translate-x-0.5">
-          <GridCube flight={gridFive} index={10} />
+          <GridCube bg={`url("/pic4.jpeg")`} flight={gridFive} index={10} />
         </div>
       </div>
       <div className="flex flex-col ">
         <div className=" translate-y-1">
-          <GridCube flight={gridSix} index={11} />
+          <GridCube bg={`url("/pic5.jpeg")`} flight={gridSix} index={11} />
         </div>
         <div className="translate-y-0.5">
-          <GridCube flight={gridSeven} index={12} />
+          <GridCube bg={`url("/pic6.jpeg")`} flight={gridSeven} index={12} />
         </div>
         <div className="">
-          <GridCube flight={gridEight} index={13} />
+          <GridCube bg={`url("/pic7.jpeg")`} flight={gridEight} index={13} />
         </div>
       </div>
     </div>
