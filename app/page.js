@@ -52,7 +52,7 @@ export default function Home() {
   }, [cityData]);
 
   return (
-    <main className=" flex-col  items-center justify-center ">
+    <main>
       <div className="flex justify-center gap-8 px-2">
         <TopGreen firstWord="WHERE" secondWord="IS" />
         <TopGreen firstWord="THE" secondWord="NEXT" />
