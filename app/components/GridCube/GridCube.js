@@ -18,7 +18,7 @@ export function GridCube({ flight, index, cityCode }) {
           <div className="flex flex-col justify-evenly pl-4">
             <div className="flex">
               <div className="font-bold text-2xl text-white">
-                {gridFlight.destination}
+                {gridFlight.city}
               </div>
             </div>
 

@@ -42,11 +42,11 @@ export default function Home() {
     fetchCsvFile();
   }, []);
 
-  // waits for csvdata to be loaded then makes key value pair object city 
+  // waits for csvdata to be loaded then makes key value pair object code : city
   useEffect(() => {
     if (csvData.length > 1) {
       const airportCodeToCity = csvData.reduce((acc, row) => {
-        acc[row.code] = row.city;
+        acc[row.code] = row.state;
         return acc;
       }, {});
 
@@ -54,7 +54,6 @@ export default function Home() {
     }
   }, [csvData]);
 
- 
   return (
     <main className=" flex-col  items-center justify-center ">
       <div className="flex justify-center gap-8 px-2">

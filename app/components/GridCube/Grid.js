@@ -26,24 +26,37 @@ export function Grid({ flightData, cityCode }) {
 
   if (flightGrid) {
     gridOne = flightGrid[6];
+    gridOne.city = city[gridOne.destination];
+
     gridTwo = flightGrid[7];
+    gridTwo.city = city[gridTwo.destination];
+
     gridThree = flightGrid[8];
+    gridThree.city = city[gridThree.destination];
+
     gridFour = flightGrid[9];
+    gridFour.city = city[gridFour.destination];
+
     gridFive = flightGrid[10];
+    gridFive.city = city[gridFive.destination];
+
     gridSix = flightGrid[11];
+    gridSix.city = city[gridSix.destination];
+
     gridSeven = flightGrid[12];
+    gridSeven.city = city[gridSeven.destination];
+
     gridEight = flightGrid[13];
+    gridEight.city = city[gridEight.destination];
+
+    console.log(gridSeven.city);
   }
 
   return (
     <div className="flex flex-wrap justify-center items-center -translate-x-0.5 max-w-[100%] w-[100%] mx-auto mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
       <div className="flex flex-col ">
         <div className="translate-x-1 translate-y-1">
-          <GridCube
-            flight={gridOne}
-            index={6}
-            cityCode={city}
-          />
+          <GridCube flight={gridOne} index={6} />
         </div>
         <div className="translate-x-1 translate-y-0.5">
           <GridCube flight={gridTwo} index={7} />
