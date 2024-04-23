@@ -92,8 +92,8 @@ export default function DetailCard({ flightDetail }) {
             target="blank"
             href={`https://www.aviasales.com/search/YYC${departureDateForUrl}${flightDetails.destination}${returnAtDateForUrl}1?request_source=search_form`}
           >
-            <div className="flex [&>*]:hover:bg-gray-500 cursor-pointer ">
-              <button className="  p-1  bg-gray-800 rounded-lg h-8 w-[6rem]   text-white [&>*]:hover:bg-gray-500">
+            <div className="flex [&>*]:hover:bg-slate-700 cursor-pointer ">
+              <button className="  p-1  bg-gray-800 rounded-lg h-8 w-[6rem]   text-white ">
                 Select
               </button>
               <div className="p-1 bg-gray-800 rounded-lg h-8 w-[2rem] flex justify-center items-center  text-white">

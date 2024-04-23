@@ -3,10 +3,10 @@ import { MainContainerButton } from "../MainContainer/MainContainerButton";
 import "./GridCube.css";
 import Link from "next/link";
 
-export function GridCube({ flight, index, cityCode }) {
+export function GridCube({ flight, index}) {
   const gridFlight = flight ? flight : "";
 
-  // const city = cityCode ? cityCode : "";
+ 
 
   return (
     <Link href={`/details/${index}`}>

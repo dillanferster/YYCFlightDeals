@@ -3,56 +3,53 @@ import { CheapFlights } from "./components/CheapFlights";
 import { MainContainer } from "./components/MainContainer/MainContainer";
 import { WhyNotGo } from "./components/WhyNotGo";
 import { MiddleGreen } from "./components/MiddleGreen";
-import { Nav } from "./components/Nav";
+
 import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
 import { Grid } from "./components/GridCube/Grid";
 
-import { fetchData } from "./components/fetchData";
+import { fetchData, fetchCityData } from "./components/fetchData";
 import { useState, useEffect } from "react";
-import { readCSVFile } from "./readFile";
 
 export default function Home() {
   const [flightData, setFlightData] = useState([]);
-  const [csvData, setCsvData] = useState([]);
+  const [cityData, setCityData] = useState([]);
   const [city, setCity] = useState({});
 
   // calls flight api route
   async function getFlights() {
     const flights = await fetchData();
 
-    // Assuming flights.data is an object like the one you've described
+    // makes flights.data object an array
     const flightsArray = Object.values(flights.data);
 
     setFlightData(flightsArray);
   }
 
-  // calls read csv file, then sets csvdata as array of objects
-  async function fetchCsvFile() {
-    try {
-      const data = await readCSVFile();
-      setCsvData(data);
-    } catch (error) {
-      console.error("Error parsing CSV data:", error);
-    }
+  // calls fetch city data api and returns object with city and code
+  async function getCityData() {
+    const citys = await fetchCityData();
+
+    setCityData(citys);
   }
 
   useEffect(() => {
     getFlights();
-    fetchCsvFile();
+    getCityData();
+    // fetchCsvFile();
   }, []);
 
-  // waits for csvdata to be loaded then makes key value pair object code : city
+  // waits for cityData to be loaded then makes key value pair object code : city
   useEffect(() => {
-    if (csvData.length > 1) {
-      const airportCodeToCity = csvData.reduce((acc, row) => {
-        acc[row.code] = row.state;
+    if (cityData.length > 1) {
+      const airportCodeToCity = cityData.reduce((acc, item) => {
+        acc[item.code] = item.name_translations.en;
         return acc;
       }, {});
 
       setCity(airportCodeToCity);
     }
-  }, [csvData]);
+  }, [cityData]);
 
   return (
     <main className=" flex-col  items-center justify-center ">
