@@ -25,7 +25,7 @@ export default function DetailCard({ flightDetail }) {
   const days = Math.floor(diffInDays.days);
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-8 gap-4 bg-transparent">
+    <div className="flex flex-wrap items-center justify-center p-8 gap-4 bg-transparent">
       <div className="w-[30rem] h-[30rem] max-sm:w-[21rem] bg-white  rounded-xl shadow-lg flex flex-col justify-between ">
         <div className="flex flex-col justify-evenly h-[28rem] ">
           <div className="p-4 h-[25rem] flex flex-col justify-between gap-8">
@@ -52,7 +52,7 @@ export default function DetailCard({ flightDetail }) {
               </div>
             </div>
             <div className="flex justify-center items-center border rounded-lg py-2 text-sm font-semibold text-gray-700">
-              {`Trip Duration: ${days} days`}
+              {` ${days} days in ${flightDetail.city}`}
             </div>
             <div className="mt-4 flex flex-col gap-4">
               <div className="text-sm font-semibold text-gray-700 mb-1">
