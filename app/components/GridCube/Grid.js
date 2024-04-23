@@ -3,8 +3,9 @@ import { GridCube } from "./GridCube";
 import { MiddleGridCube } from "../MiddleGridCube";
 import { useState, useEffect } from "react";
 
-export function Grid({ flightData }) {
+export function Grid({ flightData, cityCode }) {
   const [flightGrid, setFlightGrid] = useState(null);
+  const city = cityCode ? cityCode : "";
 
   let gridOne;
   let gridTwo;
@@ -17,7 +18,6 @@ export function Grid({ flightData }) {
 
   useEffect(() => {
     if (flightData && flightData.length > 0) {
-      console.log("data in small card holder");
       setFlightGrid(flightData);
     } else {
       console.log("Flight data is not available yet.");
@@ -36,10 +36,14 @@ export function Grid({ flightData }) {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center max-w-[100%] w-[100%] mx-auto mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
+    <div className="flex flex-wrap justify-center items-center -translate-x-0.5 max-w-[100%] w-[100%] mx-auto mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
       <div className="flex flex-col ">
         <div className="translate-x-1 translate-y-1">
-          <GridCube flight={gridOne} index={6} />
+          <GridCube
+            flight={gridOne}
+            index={6}
+            cityCode={city}
+          />
         </div>
         <div className="translate-x-1 translate-y-0.5">
           <GridCube flight={gridTwo} index={7} />

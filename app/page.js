@@ -7,13 +7,17 @@ import { Nav } from "./components/Nav";
 import { TopGreen } from "./components/TopGreen";
 import { SmallCardHolder } from "./components/SmallCardHolder";
 import { Grid } from "./components/GridCube/Grid";
-import DetailCard from "./components/DetailCard";
+
 import { fetchData } from "./components/fetchData";
 import { useState, useEffect } from "react";
+import { readCSVFile } from "./readFile";
 
 export default function Home() {
   const [flightData, setFlightData] = useState([]);
+  const [csvData, setCsvData] = useState([]);
+  const [city, setCity] = useState({});
 
+  // calls flight api route
   async function getFlights() {
     const flights = await fetchData();
 
@@ -21,17 +25,36 @@ export default function Home() {
     const flightsArray = Object.values(flights.data);
 
     setFlightData(flightsArray);
+  }
 
-    // // // Now you can access the first flight object
-    // const foundFlight = flightsArray[0];
-
-    // console.log(foundFlight.price);
+  // calls read csv file, then sets csvdata as array of objects
+  async function fetchCsvFile() {
+    try {
+      const data = await readCSVFile();
+      setCsvData(data);
+    } catch (error) {
+      console.error("Error parsing CSV data:", error);
+    }
   }
 
   useEffect(() => {
     getFlights();
+    fetchCsvFile();
   }, []);
 
+  // waits for csvdata to be loaded then makes key value pair object city 
+  useEffect(() => {
+    if (csvData.length > 1) {
+      const airportCodeToCity = csvData.reduce((acc, row) => {
+        acc[row.code] = row.city;
+        return acc;
+      }, {});
+
+      setCity(airportCodeToCity);
+    }
+  }, [csvData]);
+
+ 
   return (
     <main className=" flex-col  items-center justify-center ">
       <div className="flex justify-center gap-8 px-2">
@@ -44,7 +67,7 @@ export default function Home() {
       <WhyNotGo />
       <SmallCardHolder flightData={flightData} />
 
-      <Grid flightData={flightData} />
+      <Grid flightData={flightData} cityCode={city} />
     </main>
   );
 }
