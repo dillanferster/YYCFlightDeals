@@ -1,19 +1,13 @@
 // pages/api/flights.js
 export default async function handler(req, res) {
   // Define the URL of the external API you want to fetch data from
-
-  // Fetch data from the external API
+  const url =
+    "https://api.travelpayouts.com/v1/city-directions?origin=YYC&limit=14&currency=cad&market=ca&token=f3e7c8d52cbadd71315114a9744c4d01";
+  // "https://api.travelpayouts.com/v1/prices/cheap?origin=YYC&destination=&currency=cad&market=ca&token=f3e7c8d52cbadd71315114a9744c4d01";
 
   try {
-    const response = await fetch(
-      "https://api.travelpayouts.com/v1/city-directions?origin=YYC&limit=14&currency=cad&market=ca",
-      {
-        method: "GET",
-        headers: {
-          "x-access-token": process.env.FLIGHT_API_KEY,
-        },
-      }
-    );
+    // Fetch data from the external API
+    const response = await fetch(url);
     const data = await response.json();
 
     // Set the CORS headers
