@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       {
         method: "GET",
         headers: {
-          "x-access-token": "f3e7c8d52cbadd71315114a9744c4d01",
+          "x-access-token": process.env.FLIGHT_API_KEY,
         },
       }
     );
