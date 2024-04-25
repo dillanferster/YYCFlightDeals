@@ -10,6 +10,7 @@ import { Grid } from "./components/GridCube/Grid";
 
 import { fetchData, fetchCityData } from "./components/fetchData";
 import { useState, useEffect } from "react";
+import { Footer } from "./components/footer";
 
 export default function Home() {
   const [flightData, setFlightData] = useState([]);
@@ -64,6 +65,7 @@ export default function Home() {
       <SmallCardHolder flightData={flightData} />
 
       <Grid flightData={flightData} cityCode={city} />
+      <Footer />
     </main>
   );
 }

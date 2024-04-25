@@ -53,7 +53,7 @@ export function Grid({ flightData, cityCode }) {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center -translate-x-0.5  mt-32 mb-16  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
+    <div className="flex flex-wrap justify-center items-center -translate-x-0.5  mt-32 mb-10  max-xl:justify-center bg-[#E7E6FB] h-[70rem] max-md:h-[120rem]">
       <div className="flex flex-col ">
         <div className="translate-x-1 translate-y-1 ">
           <GridCube bg={`url("/Desert.png")`} flight={gridOne} index={6} />
