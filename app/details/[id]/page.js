@@ -52,7 +52,7 @@ export default function Home({ params }) {
 
   return (
     <main className="bg-[var(--color-bg)] bg-fixed flex flex-col  items-center justify-center mx-auto ">
-      <div>
+      <div className="mb-8">
         <DetailCard flightDetail={flightDataDetail} />
       </div>
     </main>

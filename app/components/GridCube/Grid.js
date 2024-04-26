@@ -48,8 +48,6 @@ export function Grid({ flightData, cityCode }) {
 
     gridEight = flightGrid[13];
     gridEight.city = city[gridEight.destination];
-
-    console.log(gridSeven.city);
   }
 
   return (

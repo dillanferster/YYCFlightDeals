@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MainContainerButton } from "../MainContainer/MainContainerButton";
 import "./GridCube.css";
 import Link from "next/link";
+import { fetchPhotoData } from "../fetchData";
+import { useWaitFor } from "../../hooks/useWaitFor";
 
 export function GridCube({ flight, index, bg }) {
   const gridFlight = flight ? flight : "";
+  const [gridPhotos, setGridPhotos] = useState();
 
-  const backGround = bg;
+  const backGround = gridPhotos ? gridPhotos[0].src.original : "";
+
+  // async function getPhotoData() {
+  //   // Now you can safely use gridFlight.city
+  //   const cityPhoto = gridFlight.city;
+
+  //   // // console.log(cityPhoto);
+  //   const photos = await fetchPhotoData(cityPhoto);
+
+  //   console.log(photos);
+  // }
+
+  // useWaitFor(gridFlight && gridFlight.city, getPhotoData);
+
+  // useEffect(() => {
+  //   getPhotoData();
+  // }, []);
+
+  async function getPhotoData() {
+    if (!gridPhotos) {
+      const cityPhoto = gridFlight.city;
+
+      const photos = await fetchPhotoData(cityPhoto);
+      setGridPhotos(photos);
+    }
+  }
+
+  useWaitFor(gridFlight && gridFlight.city, getPhotoData);
 
   return (
     <Link href={`/details/${index}`}>
       <div
         style={{
-          backgroundImage: backGround,
+          backgroundImage: `url(${backGround})`,
           backgroundSize: "cover", // or 'contain'
-          backgroundPosition: "center",
+          backgroundPosition: "bottom",
         }}
         id="gridCube"
         className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-cover bg-bottom flex flex-col justify-end [&>*]:hover:backdrop-blur-sm ease-in-out  transition-all overflow-hidden cursor-pointer "

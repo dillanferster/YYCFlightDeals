@@ -10,12 +10,18 @@ import { Grid } from "./components/GridCube/Grid";
 
 import { fetchData, fetchCityData } from "./components/fetchData";
 import { useState, useEffect } from "react";
-import { Footer } from "./components/footer";
 
 export default function Home() {
+  // flight objects from api
   const [flightData, setFlightData] = useState([]);
+
+  // city data from api
   const [cityData, setCityData] = useState([]);
+
+  // city is my key value pair object with code : city
   const [city, setCity] = useState({});
+  ////////
+  //
 
   // calls flight api route
   async function getFlights() {
@@ -37,7 +43,6 @@ export default function Home() {
   useEffect(() => {
     getFlights();
     getCityData();
-    // fetchCsvFile();
   }, []);
 
   // waits for cityData to be loaded then makes key value pair object code : city
@@ -60,12 +65,11 @@ export default function Home() {
       </div>
       <MiddleGreen />
       <CheapFlights />
-      <MainContainer flightData={flightData} />
+      <MainContainer flightData={flightData} cityCode={city} />
       <WhyNotGo />
       <SmallCardHolder flightData={flightData} />
 
       <Grid flightData={flightData} cityCode={city} />
-      <Footer />
     </main>
   );
 }
