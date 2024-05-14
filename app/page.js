@@ -67,7 +67,7 @@ export default function Home() {
       <CheapFlights />
       <MainContainer flightData={flightData} cityCode={city} />
       <WhyNotGo />
-      <SmallCardHolder flightData={flightData} />
+      <SmallCardHolder flightData={flightData} cityCode={city} />
 
       <Grid flightData={flightData} cityCode={city} />
     </main>

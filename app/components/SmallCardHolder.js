@@ -3,24 +3,31 @@ import { MiniCardLoading } from "./miniCardLoading";
 
 import { useState, useEffect } from "react";
 
-export function SmallCardHolder({ flightData }) {
-  const [flight, setFlight] = useState(null);
+export function SmallCardHolder({ flightData, cityCode }) {
+  const [flight, setFlight] = useState([]);
 
+  // after destructing sets the state varible with flight objects
   useEffect(() => {
-    if (flightData && flightData.length > 0) {
-      setFlight(flightData);
+    if (flightData && flightData.length > 0 && cityCode) {
+      const updatedFlightData = flightData.map((flight, index) => {
+        const tempFlight = { ...flight };
+        tempFlight.city = cityCode[flight.destination];
+        return tempFlight;
+      });
+      setFlight(updatedFlightData);
     } else {
       console.log("Flight data is not available yet.");
     }
-  }, [flightData]);
+  }, [flightData, cityCode]);
 
+  // makes new array of flights with certain indexs
   const filteredFlight = flight
     ? flight.filter((_, index) => index >= 1 && index <= 5)
     : [];
 
   return (
     <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto  max-lg:max-w-[52rem] max-md:max-w-[32rem] max-sm:max-w-[18rem]">
-      {flight ? (
+      {flight && flight.length > 0 ? (
         filteredFlight.map((flightItem, index) => {
           return (
             <div
@@ -36,10 +43,12 @@ export function SmallCardHolder({ flightData }) {
           );
         })
       ) : (
-        <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto">
-          <MiniCardLoading />
-          <MiniCardLoading />
-          <MiniCardLoading />
+        <div className="flex justify-evenly w-[100%]  max-lg:max-w-[52rem] max-md:max-w-[32rem] max-sm:max-w-[18rem]">
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
         </div>
       )}
     </div>

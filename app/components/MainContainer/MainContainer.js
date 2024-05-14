@@ -44,16 +44,20 @@ export function MainContainer({ flightData, cityCode }) {
       className="flex justify-center px-4 mt-4 max-w-[62rem] max-lg:w-[46rem]  mx-auto max-md:w-[38rem] max-md:mt-2 max-sm:w-[23rem] mb-5 bg-transparent"
     >
       <Link href={`/details/0`}>
-        <div
-          style={{
-            backgroundImage: `url(${backGround})`,
-            backgroundSize: "cover", // or 'contain'
-            backgroundPosition: "bottom",
-          }}
-          className="flex  bg-cover  bg-left justify-end items-end border-2 border-black border-solid  max-w-[62rem] rounded-md h-48 hover:translate-y-[1px] drop-shadow-[_1px_6px_#2A2929] ease-in-out transition-all hover:drop-shadow-[_1px_5px_#474545] cursor-pointer [&>*]:hover:backdrop-blur-sm max-lg:w-[44rem] max-md:w-[36rem] max-sm:w-[23rem] "
-        >
-          <MainContainerButton flightData={flightData}></MainContainerButton>
-        </div>
+        {flight && photo ? (
+          <div
+            style={{
+              backgroundImage: `url(${backGround})`,
+              backgroundSize: "cover", // or 'contain'
+              backgroundPosition: "bottom",
+            }}
+            className="flex  bg-cover  bg-left justify-end items-end border-2 border-black border-solid  max-w-[62rem] rounded-md h-48 hover:translate-y-[1px] drop-shadow-[_1px_6px_#2A2929] ease-in-out transition-all hover:drop-shadow-[_1px_5px_#474545] cursor-pointer [&>*]:hover:backdrop-blur-sm max-lg:w-[44rem] max-md:w-[36rem] max-sm:w-[23rem] "
+          >
+            <MainContainerButton flightData={flightData}></MainContainerButton>
+          </div>
+        ) : (
+          <div className=" skeleton flex justify-end items-end border-2 border-black border-solid  w-[62rem] rounded-md h-48 hover:translate-y-[1px] drop-shadow-[_1px_6px_#2A2929]cursor-pointer [&>*]:hover:backdrop-blur-sm max-lg:w-[44rem] max-md:w-[36rem] max-sm:w-[23rem] "></div>
+        )}
       </Link>
     </div>
   );
