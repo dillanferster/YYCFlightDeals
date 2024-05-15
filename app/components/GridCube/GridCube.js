@@ -6,7 +6,7 @@ import { fetchPhotoData } from "../fetchData";
 import { useWaitFor } from "../../hooks/useWaitFor";
 
 export function GridCube({ flight }) {
-  const gridFlight = flight ? flight : "";
+  const gridFlight = flight ? flight : [];
   const [gridPhotos, setGridPhotos] = useState();
 
   const backGround = gridPhotos ? gridPhotos[0].src.original : "";

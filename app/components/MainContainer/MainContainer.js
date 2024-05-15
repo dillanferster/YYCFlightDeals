@@ -44,7 +44,7 @@ export function MainContainer({ flightData, cityCode }) {
       className="flex justify-center px-4 mt-4 max-w-[62rem] max-lg:w-[46rem]  mx-auto max-md:w-[38rem] max-md:mt-2 max-sm:w-[23rem] mb-5 bg-transparent"
     >
       <Link href={`/details/0`}>
-        {flight && photo ? (
+        {flight && photo && city ? (
           <div
             style={{
               backgroundImage: `url(${backGround})`,

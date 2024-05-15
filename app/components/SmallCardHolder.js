@@ -27,20 +27,21 @@ export function SmallCardHolder({ flightData, cityCode }) {
 
   return (
     <div className="mt-16 flex justify-evenly max-w-[62rem] mx-auto  max-lg:max-w-[52rem] max-md:max-w-[32rem] max-sm:max-w-[18rem]">
-      {flight && flight.length > 0 && filteredFlight[4]?.city ? (
+      {flight && flight.length > 0 && filteredFlight[4].city ? (
         filteredFlight.map((flightItem, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                index === 0 || index === 4 || index === 2
-                  ? "max-sm:hidden max-ms:max-w-[10rem]"
-                  : ""
-              }
-            >
-              <MiniCard flightItem={flightItem} index={index} />
-            </div>
-          );
+          if (flightItem.city)
+            return (
+              <div
+                key={index}
+                className={
+                  index === 0 || index === 4 || index === 2
+                    ? "max-sm:hidden max-ms:max-w-[10rem]"
+                    : ""
+                }
+              >
+                <MiniCard flightItem={flightItem} index={index} />
+              </div>
+            );
         })
       ) : (
         <div className="flex justify-evenly w-[100%]  max-lg:max-w-[52rem] max-md:max-w-[32rem] max-sm:max-w-[18rem]">
