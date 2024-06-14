@@ -45,11 +45,11 @@ export function SmallCardHolder({ flightData, cityCode }) {
         })
       ) : (
         <div className="flex justify-evenly w-[100%]  max-lg:max-w-[52rem] max-md:max-w-[32rem] max-sm:max-w-[18rem]">
-          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
-          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
-          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
-          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
-          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-md h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-sm h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-sm h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-sm h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-sm h-28 "></div>
+          <div className=" skeleton   border-2 border-black border-solid w-[4rem] rounded-sm h-28 "></div>
         </div>
       )}
     </div>

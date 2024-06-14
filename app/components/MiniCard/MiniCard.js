@@ -41,7 +41,7 @@ export function MiniCard({ flightItem, index }) {
             backgroundPosition: "bottom",
           }}
           id="MiniCard"
-          className="flex flex-col   justify-end  items-center ease-in-out transition-all  border-2 border-black border-solid w-[4rem] rounded-md h-28 text-white"
+          className="flex flex-col   justify-end  items-center ease-in-out transition-all  border-2 border-black border-solid w-[4rem] rounded-sm h-28 text-white"
         >
           <div id="MiniCardFlight">{flightMini.destination}</div>
           <div id="MiniCardInfo">

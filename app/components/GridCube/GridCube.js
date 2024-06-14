@@ -33,9 +33,12 @@ export function GridCube({ flight }) {
             backgroundPosition: "bottom",
           }}
           id="gridCube"
-          className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-cover bg-bottom flex flex-col justify-end [&>*]:hover:backdrop-blur-sm ease-in-out  transition-all overflow-hidden cursor-pointer "
+          className="border-2 border-black w-[21.42rem] h-[19rem] rounded-sm bg-cover bg-bottom flex flex-col justify-end [&>*]:hover:backdrop-blur-sm   ease-in-out [&>*]:border-black [&>*]:hover:border-t-2  overflow-hidden cursor-pointer "
         >
-          <div className=" h-24 flex justify-between ease-in-out  transition-all ">
+          <div
+            id="grid-Hover-Selected"
+            className=" h-24 flex justify-between ease-in-out  "
+          >
             <div className="flex flex-col justify-evenly pl-4">
               <div className="flex">
                 <div className="font-bold text-2xl text-white">
